@@ -1,4 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getPublishedPosts } from '../lib/wix';
+
+let posts = [];
+let loadError = false;
+try {
+  posts = await getPublishedPosts();
+} catch {
+  loadError = true;
+}
 ---
-<Base title="The Denver Driver Journal · The Denver Driver"><section class="hero"><div class="wrap"><div class="eyebrow">The Denver Driver journal</div><h1>Golf notes for real life.</h1><p class="lede">Fresh stories, practical guides, Road to 85 updates, gear decisions, local Denver golf, and travel golf—pulled from the existing Wix Blog backend.</p><p><strong>Migration correction:</strong> the old driving/road copy is intentionally removed here.</p></div></section></Base>
+<Base title="The Denver Driver Journal · The Denver Driver">
+  <section class="hero"><div class="wrap"><div class="eyebrow">The Denver Driver journal</div><h1>Golf notes for real life.</h1><p class="lede">Fresh stories, practical guides, Road to 85 updates, gear decisions, local Denver golf, and travel golf.</p></div></section>
+  <section class="section"><div class="wrap">
+    {loadError ? <p>Articles are temporarily unavailable. Please check back shortly.</p> : posts.length === 0 ? <p>New Denver Driver stories are being prepared. Published articles will appear here automatically.</p> : <div class="grid">{posts.map((post) => <a class="card" href={`/blog/${post.slug}`}><strong>{post.title}</strong><span>{post.excerpt || post.contentText?.slice(0,180) || 'Read the story.'}</span></a>)}</div>}
+  </div></section>
+</Base>
