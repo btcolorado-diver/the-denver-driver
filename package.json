@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@astrojs/node": "latest",
-    "@wix/sdk": "latest",
     "astro": "latest"
   }
 }
