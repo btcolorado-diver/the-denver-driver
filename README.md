@@ -12,16 +12,16 @@ Safe migration scaffold for existing Wix site `2608d0f5-f13f-4bc8-b0b5-6cafbe981
 ## Wix client
 Public client ID: `f01534eb-38ea-4c2c-a131-c54a6ed803fb`
 
-## Next integration work
-1. Add Wix SDK OAuth visitor session handling.
-2. Pull published Wix Blog posts into `/blog` and article routes.
-3. Connect contact/newsletter forms to Wix Forms/CRM.
-4. Add site photography/assets and match current visual design.
-5. Crawl all old URLs and create redirect manifest.
-6. Deploy to preview host.
-7. Add preview domain and callback to Wix headless client.
-8. QA desktop/mobile/accessibility/SEO.
-9. Coordinate domain switch only after approval.
+The frontend authenticates as an anonymous visitor using the public client ID and reads published Wix Blog posts directly from the existing Driver backend. Draft posts remain private in Wix and are never requested by the public frontend.
 
-## Known content defect corrected in scaffold
-The current live `/blog` page uses driving-oriented copy (e.g. Denver roads / every mile). This scaffold replaces that with golf editorial language.
+## Current migration state
+1. Dedicated Driver source repository created.
+2. Existing Wix backend preserved.
+3. Headless client created on the existing Wix site.
+4. Core public routes scaffolded in Astro.
+5. Wix Blog published-post integration added.
+6. GitHub build validation added.
+7. Next: preview deployment, forms/newsletter integration, approved photography/assets, redirects, and full QA.
+
+## Launch rule
+Do not move `thedenverdriver.com` until a preview deployment has passed desktop, mobile, accessibility, SEO, navigation, forms, images, and old-URL redirect QA.
