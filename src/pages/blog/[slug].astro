@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPublishedPostBySlug } from '../../lib/wix';
+
+const { slug } = Astro.params;
+const post = slug ? await getPublishedPostBySlug(slug) : null;
+if (!post) return Astro.redirect('/blog', 302);
+const paragraphs = (post.contentText || '').split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+---
+<Base title={`${post.title} · The Denver Driver`} description={post.excerpt || post.contentText?.slice(0,160)}>
+  <article>
+    <section class="hero"><div class="wrap"><div class="eyebrow">The Denver Driver</div><h1>{post.title}</h1>{post.excerpt && <p class="lede">{post.excerpt}</p>}</div></section>
+    <section class="section"><div class="wrap" style="max-width:780px">{paragraphs.map((paragraph) => <p class="lede" style="font-size:1.05rem">{paragraph}</p>)}</div></section>
+  </article>
+</Base>
