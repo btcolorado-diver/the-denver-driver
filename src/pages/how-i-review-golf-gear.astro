@@ -1,0 +1,14 @@
+---
+import HubPage from '../components/HubPage.astro';
+const sections=[
+ {title:'The review standard',items:[
+  {title:'Separate use from marketing',text:'Product information and personal-use observations should be clearly distinguished.'},
+  {title:'Name the decision',text:'A review is most useful when it explains who the product may help and why.'},
+  {title:'Keep limits visible',text:'No single golfer or test can stand in for every golfer.'}]},
+ {title:'Use reviews well',items:[
+  {title:'Start with your own question',text:'Look for information that helps your specific game, budget, and setup.'},
+  {title:'Fit before certainty',text:'A fitting can add context where specs alone cannot settle the question.'},
+  {title:'Know the disclosure',text:'Read how affiliate relationships are handled on this site.',href:'/affiliate-disclosure'}]}
+];
+---
+<HubPage eyebrow="Review standards" title="How Golf Gear Is Reviewed Here" intro="The Denver Driver aims to make gear coverage useful, transparent, and proportionate. Firsthand context and commercial relationships should never be hidden." sections={sections} ctaHref="/affiliate-disclosure" cta="Read the affiliate disclosure →" />

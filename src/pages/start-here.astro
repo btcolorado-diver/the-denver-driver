@@ -1,0 +1,14 @@
+---
+import HubPage from '../components/HubPage.astro';
+const sections=[
+ {title:'Choose your question',items:[
+  {title:'I want to get better',text:'Start with a practice or on-course decision that is useful this week.',href:'/play-better'},
+  {title:'I am considering gear',text:'Find a clearer way to weigh a purchase, a fitting, or a lesson.',href:'/spend-smarter'},
+  {title:'I want to play more',text:'Use the time and company you have to make a round work.',href:'/play-anywhere'}]},
+ {title:'Find your context',items:[
+  {title:'I am planning Denver golf',text:'Use local conditions and a realistic day plan as your starting point.',href:'/denver-golf'},
+  {title:'I am golfing with family',text:'Build a shared day that is welcoming for every experience level.',href:'/family-golf'},
+  {title:'I was invited to an outing',text:'Take the uncertainty out of business or social golf.',href:'/play-anywhere'}]}
+];
+---
+<HubPage eyebrow="Start here" title="Start Here: Find Your Next Golf Step" intro="There is no single right path through golf. Pick the question in front of you and follow the guidance that makes the next round easier." sections={sections} ctaHref="/road-to-85" cta="Follow the Road to 85 →" />

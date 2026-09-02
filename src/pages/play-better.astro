@@ -1,0 +1,14 @@
+---
+import HubPage from '../components/HubPage.astro';
+const sections=[
+ {title:'Practice with purpose',items:[
+  {title:'Choose one skill to work on',text:'Make practice time easier to use by narrowing the goal.'},
+  {title:'Create a simple short-game plan',text:'Build a repeatable routine around the shots you face most often.'},
+  {title:'Make range time carry over',text:'Turn a session into one idea you can use on the course.'}]},
+ {title:'Play smarter',items:[
+  {title:'Know your carry distances',text:'Base club choices on the number that gets the ball to the target.'},
+  {title:'Make a calm tee-shot decision',text:'Find the target that makes the next shot more manageable.'},
+  {title:'Turn a round into feedback',text:'Notice patterns that are useful for the next practice session.'}]}
+];
+---
+<HubPage eyebrow="Play better" title="Play Better, One Useful Decision at a Time" intro="Guidance for golfers who want clearer practice, calmer decisions, and more satisfying rounds." sections={sections} ctaHref="/road-to-85" cta="Follow the Road to 85 →" />

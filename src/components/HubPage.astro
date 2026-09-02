@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+const { eyebrow, title, intro, sections = [], ctaHref='/start-here', cta='Find your next step →' } = Astro.props;
+---
+<Base title={`${title} · The Denver Driver`} description={intro}>
+  <section class="hero"><div class="wrap"><div class="eyebrow">{eyebrow}</div><h1>{title}</h1><p class="lede">{intro}</p></div></section>
+  {sections.map((section, i) => <section class="section"><div class="wrap"><div class="eyebrow">0{i+1}</div><h2>{section.title}</h2><div class="grid">{section.items.map((item) => <a class="card" href={item.href || '#'}><strong>{item.title}</strong><span>{item.text}</span></a>)}</div></div></section>)}
+  <section class="section"><div class="wrap"><div class="eyebrow">Choose a next shot</div><h2>Keep moving with a useful next step.</h2><div class="buttons"><a class="button primary" href={ctaHref}>{cta}</a></div></div></section>
+</Base>

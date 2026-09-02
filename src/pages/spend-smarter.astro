@@ -1,0 +1,14 @@
+---
+import HubPage from '../components/HubPage.astro';
+const sections=[
+ {title:'Choose the right investment',items:[
+  {title:'Lessons versus new clubs',text:'Ask what would most meaningfully change your next stretch of golf.'},
+  {title:'What a club fitting can clarify',text:'Understand the questions a fitting can answer before you book one.'},
+  {title:'When a putter fitting makes sense',text:'Sort feel, setup, and data into a decision you can own.'}]},
+ {title:'Buy with context',items:[
+  {title:'How review context works',text:'See how use, testing, and affiliate relationships should be disclosed.',href:'/how-i-review-golf-gear'},
+  {title:'What to know before buying tech',text:'Start with the job you need the tool to do.'},
+  {title:'What is already in the bag',text:'Build from your current setup before adding another club.'}]}
+];
+---
+<HubPage eyebrow="Buying with intent" title="Spend Smarter on Golf" intro="A clearer way to weigh lessons, clubs, fittings, data, and gear without treating every new thing as essential." sections={sections} ctaHref="/how-i-review-golf-gear" cta="Learn how gear is reviewed →" />

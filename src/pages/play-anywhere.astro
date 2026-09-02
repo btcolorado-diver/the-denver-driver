@@ -1,0 +1,14 @@
+---
+import HubPage from '../components/HubPage.astro';
+const sections=[
+ {title:'Plan the day',items:[
+  {title:'Make a golf trip fit the trip',text:'Start with the group and the available time before choosing the round.'},
+  {title:'A flexible travel-round checklist',text:'Keep the plan light enough to leave room for the rest of the day.'},
+  {title:'When a short round is enough',text:'A smaller window can still be a great day to play.'}]},
+ {title:'Make it comfortable',items:[
+  {title:'Show up ready for an outing',text:'Use a simple approach when someone else has made the invitation.'},
+  {title:'Golf with a mixed-experience group',text:'Choose a pace and format that welcomes everyone.'},
+  {title:'Bring less, enjoy more',text:'Let the essentials, not a complicated plan, travel with you.'}]}
+];
+---
+<HubPage eyebrow="Play more" title="Play Golf Anywhere" intro="Golf can fit a weekend away, a work trip, or a loose afternoon. The goal is a better day, not a perfectly optimized itinerary." sections={sections} ctaHref="/denver-golf" cta="Plan a Denver round →" />

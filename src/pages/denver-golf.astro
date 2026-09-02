@@ -1,0 +1,14 @@
+---
+import HubPage from '../components/HubPage.astro';
+const sections=[
+ {title:'Plan locally',items:[
+  {title:'Build a round around the day',text:'Consider pace, weather, travel time, and the people playing.'},
+  {title:'A local-golf preparation list',text:'A calm checklist for getting out the door with less friction.'},
+  {title:'Make the outing work for everyone',text:'The right expectations help a group have a better time.'}]},
+ {title:'Understand the conditions',items:[
+  {title:'Altitude and club distance',text:'Keep measured carry numbers at the center of local adjustments.'},
+  {title:'A better pre-round decision',text:'Use the conditions to guide strategy, not to overcomplicate it.'},
+  {title:'Keep golf connected to the city',text:'Leave room for the people and places around the round.'}]}
+];
+---
+<HubPage eyebrow="Denver golf" title="Denver Golf, Planned for Real Life" intro="Local context for arranging more enjoyable Denver-area golf days, with conditions and altitude treated as useful information—not bravado." sections={sections} ctaHref="/play-better" cta="Know your distances →" />

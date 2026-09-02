@@ -1,0 +1,43 @@
+---
+import { site, hubs } from '../lib/site';
+const { title = site.name, description = site.description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <style>
+      :root { --ink:#17211f; --paper:#f7f4ec; --green:#254a3b; --orange:#cf6b32; --line:#d8d1c3; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--paper); color:var(--ink); }
+      a { color:inherit; }
+      .wrap { width:min(1120px, calc(100% - 32px)); margin:auto; }
+      header { border-bottom:1px solid var(--line); background:rgba(247,244,236,.96); position:sticky; top:0; z-index:10; }
+      header .wrap { display:flex; justify-content:space-between; align-items:center; min-height:64px; gap:24px; }
+      nav { display:flex; gap:18px; flex-wrap:wrap; font-size:.92rem; }
+      main { min-height:70vh; }
+      footer { border-top:1px solid var(--line); margin-top:72px; padding:36px 0; }
+      h1 { font-size:clamp(2.5rem,8vw,5.5rem); line-height:.95; margin:.2em 0; letter-spacing:-.045em; }
+      h2 { font-size:clamp(1.8rem,4vw,3rem); letter-spacing:-.03em; }
+      .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:.75rem; font-weight:700; }
+      .hero { padding:84px 0 56px; }
+      .lede { max-width:720px; font-size:1.25rem; line-height:1.55; }
+      .buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+      .button { display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid var(--ink); text-decoration:none; font-weight:700; }
+      .button.primary { background:var(--orange); border-color:var(--orange); color:white; }
+      .section { padding:54px 0; border-top:1px solid var(--line); }
+      .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+      .card { border:1px solid var(--line); border-radius:16px; padding:22px; background:white; min-height:180px; text-decoration:none; }
+      .card strong { display:block; font-size:1.15rem; margin:10px 0; }
+      @media (max-width:800px){ .grid{grid-template-columns:1fr;} header nav{display:none;} }
+    </style>
+  </head>
+  <body>
+    <header><div class="wrap"><a href="/" style="font-weight:800;text-decoration:none">The Denver Driver</a><nav>{hubs.map(([href,label]) => <a href={href}>{label}</a>)}</nav></div></header>
+    <main><slot /></main>
+    <footer><div class="wrap"><p>{site.description}</p><p><a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/how-i-review-golf-gear">How I Review Gear</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a> · <a href="/privacy-policy">Privacy Policy</a></p><small>© 2026 The Denver Driver. All rights reserved.</small></div></footer>
+  </body>
+</html>
